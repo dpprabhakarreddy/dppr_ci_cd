@@ -1,0 +1,44 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "outputData",
+						"type": "DatasetReference"
+					},
+					"name": "dpprdf"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "finaloutput",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          C_Year as short,",
+				"          T_Sales as short",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> dpprdf",
+				"dpprdf sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     filePattern:'Sales.json',",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
+			]
+		}
+	}
+}

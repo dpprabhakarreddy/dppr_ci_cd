@@ -1,0 +1,19 @@
+{
+	"name": "finaloutput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls2adf",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "bronze",
+				"fileSystem": "dpprcontainer"
+			}
+		},
+		"schema": {}
+	}
+}
