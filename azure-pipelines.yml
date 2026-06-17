@@ -55,7 +55,7 @@ stages:
         csmParametersFile: "$(Build.SourcesDirectory)/ARMTemplateParametersForFactory.json"
 
         overrideParameters: >
-          -factoryName "denisuatadf"
+          -factoryName "dppruatadf"
           -adls2adf_accountKey "$(uat_adls_account_key)"
           -adls2adf_properties_typeProperties_url "https://dppradlsstguat.dfs.core.windows.net/"
 
@@ -90,7 +90,7 @@ stages:
         csmParametersFile: "$(Build.SourcesDirectory)/ARMTemplateParametersForFactory.json"
 
         overrideParameters: >
-          -factoryName "denisprodadf"
+          -factoryName "dpprprodadf"
           -adls2adf_accountKey "$(prod_adls_account_key)"
           -adls2adf_properties_typeProperties_url "https://dppradlsstgprod.dfs.core.windows.net/"
 
