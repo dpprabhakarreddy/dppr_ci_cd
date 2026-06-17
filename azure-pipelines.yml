@@ -45,7 +45,7 @@ stages:
     - task: AzureResourceGroupDeployment@2
       displayName: "Deploy ARM Template to UAT Data Factory"
       inputs:
-        azureSubscription: "dpprDevOpsConnection"
+        azureSubscription: "dpprDevOpsConnectionNew"
         action: "Create Or Update Resource Group"
         resourceGroupName: "dppr-rg"
         location: "East US"
@@ -80,7 +80,7 @@ stages:
     - task: AzureResourceGroupDeployment@2
       displayName: "Deploy ARM Template to PROD Data Factory"
       inputs:
-        azureSubscription: "dpprDevOpsConnection"
+        azureSubscription: "dpprDevOpsConnectionNew"
         action: "Create Or Update Resource Group"
         resourceGroupName: "dppr-rg"
         location: "East US"
